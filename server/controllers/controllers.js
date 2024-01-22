@@ -22,18 +22,16 @@ const reset = () => {
   randomNumber = Math.floor(Math.random() * 100) + 1;
 }
 let count = 0;
-
-
 exports.guess = (req, res) => {
   const guess = req.body.guess;
   const name = req.body.name;
 
   if (guess < randomNumber) {
     count++;
-    res.send({ result: 'Too Low '  });
+    res.send({ result: 'Too Low ' });
   } else if (guess > randomNumber) {
     count++;
-    res.send({ result: 'Too High '  });
+    res.send({ result: 'Too High ' });
   } else {
     res.send({ result: 'You Win!' })
     count++;
